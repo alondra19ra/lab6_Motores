@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DoorSound : MonoBehaviour
 {
-    [SerializeField] private AudioSource doorAudioSource;
+    [SerializeField] private AudioSource doorAudioSource; 
+    [SerializeField] private AudioClip doorOpenSound; 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            doorAudioSource.Play();
+            doorAudioSource.PlayOneShot(doorOpenSound);
         }
     }
 }

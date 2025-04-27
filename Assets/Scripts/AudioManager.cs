@@ -46,5 +46,6 @@ public class AudioManager : MonoBehaviour
             _savedVolumes[i] = audioSettings[i].VolumeScaled;
         }
     }
+
 }
 
